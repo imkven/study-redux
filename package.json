@@ -19,8 +19,8 @@
     "redux-devtools": "^3.2.0"
   },
   "scripts": {
-    "server": "node ./src/server/server.js",
-    "dev": "webpack -d --watch",
+    "dev": "node ./src/server/server.js",
+    "webpack": "webpack -d --watch",
     "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
