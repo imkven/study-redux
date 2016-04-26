@@ -5,15 +5,17 @@
 ## Setup
 
 1. Install dependencies
+
     ```
     npm i
     ```
 
 1. Running server and webpack
+
     ```
-    # Run server
+    // Run server
     npm start dev
 
-    # Run webpack with watch
+    // Run webpack with watch
     npm start webpack
     ```
