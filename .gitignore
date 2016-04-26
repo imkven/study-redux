@@ -1,0 +1,13 @@
+# configuration files
+configs/config.js
+www/config/config.js
+
+# node server
+node_modules/
+
+# ionic app
+www/components
+www/bower_components
+www/lib
+www/css
+.sass-cache
