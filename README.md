@@ -6,16 +6,13 @@
 
 1. Install dependencies
 
-    ```
-    npm i
-    ```
+```
+npm i
+```
 
 1. Running server and webpack
 
-    ```
-    // Run server
-    npm start dev
-
-    // Run webpack with watch
-    npm start webpack
-    ```
+```bash
+npm start dev
+npm start webpack
+```
