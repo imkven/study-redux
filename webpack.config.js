@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'public/js');
 var APP_DIR = path.resolve(__dirname, 'src/app');
 
 var config = {
-  entry: APP_DIR + '/index.react.js',
+  entry: APP_DIR + '/index.js',
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
@@ -13,7 +13,7 @@ var config = {
   module : {
     loaders : [
       {
-        test : /\.react.js?/,
+        test : /\.js?/,
         include : APP_DIR,
         loader : 'babel'
       }

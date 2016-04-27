@@ -13,6 +13,6 @@ npm i
 1. Running server and webpack
 
 ```bash
-npm start dev
-npm start webpack
+npm run dev
+npm run webpack
 ```
