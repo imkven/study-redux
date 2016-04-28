@@ -71,11 +71,11 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _Bar = __webpack_require__(/*! ./components/Bar */ 264);
+	var _Bar = __webpack_require__(/*! ./components/Bar */ 265);
 	
 	var _Bar2 = _interopRequireDefault(_Bar);
 	
-	var _Foo = __webpack_require__(/*! ./components/Foo */ 265);
+	var _Foo = __webpack_require__(/*! ./components/Foo */ 266);
 	
 	var _Foo2 = _interopRequireDefault(_Foo);
 	
@@ -28164,6 +28164,13 @@
 	      return state.map(function (t) {
 	        return todo(t, action);
 	      });
+	    case 'GET_FAKE_DATA':
+	      // Insert fake message
+	      return [].concat(_toConsumableArray(state), [todo(undefined, {
+	        type: 'ADD_TODO',
+	        id: state.length + 1,
+	        text: 'You try get fake data'
+	      })]);
 	    default:
 	      return state;
 	  }
@@ -28226,13 +28233,15 @@
 	
 	var _AddTodo2 = _interopRequireDefault(_AddTodo);
 	
-	var _VisibleTodoList = __webpack_require__(/*! ../containers/VisibleTodoList */ 261);
+	var _GetFakeData = __webpack_require__(/*! ../containers/GetFakeData */ 261);
+	
+	var _GetFakeData2 = _interopRequireDefault(_GetFakeData);
+	
+	var _VisibleTodoList = __webpack_require__(/*! ../containers/VisibleTodoList */ 262);
 	
 	var _VisibleTodoList2 = _interopRequireDefault(_VisibleTodoList);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// @TODO: Try put route in this file
 	
 	var App = function App(_ref) {
 	  var children = _ref.children;
@@ -28241,11 +28250,14 @@
 	    null,
 	    _react2.default.createElement(_Header2.default, null),
 	    _react2.default.createElement(_AddTodo2.default, null),
+	    _react2.default.createElement(_GetFakeData2.default, null),
 	    _react2.default.createElement(_VisibleTodoList2.default, null),
 	    children,
 	    _react2.default.createElement(_Footer2.default, null)
 	  );
 	};
+	
+	// @TODO: Try put route in this file
 	
 	exports.default = App;
 
@@ -28437,6 +28449,14 @@
 	    id: id
 	  };
 	};
+	
+	//http://www.mocky.io/v2/5721d28712000084053e7504
+	
+	var getFakeData = exports.getFakeData = function getFakeData() {
+	  return {
+	    type: 'GET_FAKE_DATA'
+	  };
+	};
 
 /***/ },
 /* 259 */
@@ -28548,6 +28568,53 @@
 
 /***/ },
 /* 261 */
+/*!*******************************************!*\
+  !*** ./src/app/containers/GetFakeData.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactRedux = __webpack_require__(/*! react-redux */ 166);
+	
+	var _actions = __webpack_require__(/*! ../actions */ 258);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var GetFakeData = function GetFakeData(_ref) {
+	  var dispatch = _ref.dispatch;
+	
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'form',
+	      { onSubmit: function onSubmit(e) {
+	          e.preventDefault();
+	          dispatch((0, _actions.getFakeData)());
+	        } },
+	      _react2.default.createElement(
+	        'button',
+	        { type: 'submit' },
+	        'Get fake data'
+	      )
+	    )
+	  );
+	};
+	GetFakeData = (0, _reactRedux.connect)()(GetFakeData);
+	
+	exports.default = GetFakeData;
+
+/***/ },
+/* 262 */
 /*!***********************************************!*\
   !*** ./src/app/containers/VisibleTodoList.js ***!
   \***********************************************/
@@ -28563,7 +28630,7 @@
 	
 	var _actions = __webpack_require__(/*! ../actions */ 258);
 	
-	var _TodoList = __webpack_require__(/*! ../components/TodoList */ 262);
+	var _TodoList = __webpack_require__(/*! ../components/TodoList */ 263);
 	
 	var _TodoList2 = _interopRequireDefault(_TodoList);
 	
@@ -28603,7 +28670,7 @@
 	exports.default = VisibleTodoList;
 
 /***/ },
-/* 262 */
+/* 263 */
 /*!****************************************!*\
   !*** ./src/app/components/TodoList.js ***!
   \****************************************/
@@ -28621,7 +28688,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Todo = __webpack_require__(/*! ./Todo */ 263);
+	var _Todo = __webpack_require__(/*! ./Todo */ 264);
 	
 	var _Todo2 = _interopRequireDefault(_Todo);
 	
@@ -28657,7 +28724,7 @@
 	exports.default = TodoList;
 
 /***/ },
-/* 263 */
+/* 264 */
 /*!************************************!*\
   !*** ./src/app/components/Todo.js ***!
   \************************************/
@@ -28700,7 +28767,7 @@
 	exports.default = Todo;
 
 /***/ },
-/* 264 */
+/* 265 */
 /*!***********************************!*\
   !*** ./src/app/components/Bar.js ***!
   \***********************************/
@@ -28729,7 +28796,7 @@
 	exports.default = Bar;
 
 /***/ },
-/* 265 */
+/* 266 */
 /*!***********************************!*\
   !*** ./src/app/components/Foo.js ***!
   \***********************************/

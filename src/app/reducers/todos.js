@@ -31,6 +31,16 @@ const todos = (state = [], action) => {
       return state.map(t =>
         todo(t, action)
       )
+    case 'GET_FAKE_DATA':
+      // Insert fake message
+      return [
+        ...state,
+        todo(undefined, {
+          type: 'ADD_TODO',
+          id: state.length + 1,
+          text: 'You try get fake data'
+        })
+      ]
     default:
       return state
   }

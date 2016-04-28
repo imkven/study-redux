@@ -20,3 +20,11 @@ export const toggleTodo = (id) => {
     id
   }
 }
+
+//http://www.mocky.io/v2/5721d28712000084053e7504
+
+export const getFakeData = () => {
+  return {
+    type: 'GET_FAKE_DATA'
+  }
+}
