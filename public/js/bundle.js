@@ -28457,6 +28457,18 @@
 	    type: 'GET_FAKE_DATA'
 	  };
 	};
+	
+	var getFakeDataSuccess = exports.getFakeDataSuccess = function getFakeDataSuccess() {
+	  return {
+	    type: 'GET_FAKE_DATA_SUCCESS'
+	  };
+	};
+	
+	var getFakeDataError = exports.getFakeDataError = function getFakeDataError() {
+	  return {
+	    type: 'GET_FAKE_DATA_ERROR'
+	  };
+	};
 
 /***/ },
 /* 259 */

@@ -28,3 +28,15 @@ export const getFakeData = () => {
     type: 'GET_FAKE_DATA'
   }
 }
+
+export const getFakeDataSuccess = () => {
+  return {
+    type: 'GET_FAKE_DATA_SUCCESS'
+  }
+}
+
+export const getFakeDataError = () => {
+  return {
+    type: 'GET_FAKE_DATA_ERROR'
+  }
+}
