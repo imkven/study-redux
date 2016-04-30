@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
@@ -12,7 +13,10 @@ import App from './components/App'
 import Bar from './components/Bar'
 import Foo from './components/Foo'
 
-let store = createStore(todoApp)
+let store = createStore(
+  todoApp,
+  applyMiddleware(thunkMiddleware)
+)
 const history = syncHistoryWithStore(browserHistory, store)
 
 render(
